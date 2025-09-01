@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Matching Game</title>
+  <style>
+    body {
+      background-color: #84BCDA;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 30px;
+    }
+
+    h1 {
+      color: #067BC2;
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .info-bar {
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      font-size: 20px;
+      margin-top: 20px;
+      margin-bottom: 40px;
+      color: #055a8c;
+      font-weight: bold;
+    }
+
+    .game-board {
+      display: grid;
+      grid-template-columns: repeat(4, 100px);
+      gap: 15px;
+      justify-content: center;
+    }
+
+    .card {
+      width: 100px;
+      height: 100px;
+      background-color: #067BC2;
+      color: white;
+      font-size: 32px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      border-radius: 10px;
+      box-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+      user-select: none;
+    }
+
+    .matched {
+      background-color: #44A64C;
+      pointer-events: none;
+    }
+
+    .back-home1 {
+      margin-top: 50px;
+      text-align: center;
+    }
+
+    .back-home1 a {
+      display: inline-block;
+      background-color: #067BC2;
+      color: white;
+      padding: 12px 25px;
+      text-decoration: none;
+      font-size: 18px;
+      border-radius: 10px;
+      transition: background-color 0.3s ease;
+    }
+
+    .back-home1 a:hover {
+      background-color: #055a8c;
+    }
+  </style>
+</head>
+<body>
+  <h1>🧠 Memory Matching Game</h1>
+  <div class="info-bar">
+    <div>⏱️ Timer: <span id="timer">0</span> sec</div>
+    <div>⭐ Score: <span id="score">0</span></div>
+  </div>
+
+  <div class="game-board" id="board"></div>
+
+  <div class="back-home1">
+    <a href="mindgames.html"><i class="fas fa-arrow-left"></i> Back to Mind Games</a>
+  </div>
+
+  <script>
+    const board = document.getElementById('board');
+    const timerDisplay = document.getElementById('timer');
+    const scoreDisplay = document.getElementById('score');
+
+    let cards = [1,2,3,4,1,2,3,4];
+    cards = cards.sort(() => 0.5 - Math.random());
+
+    let first = null, second = null, lock = false;
+    let score = 0, matchedPairs = 0;
+    let time = 0;
+    let timerInterval = setInterval(() => {
+      time++;
+      timerDisplay.textContent = time;
+    }, 1000);
+
+    cards.forEach(num => {
+      const card = document.createElement('div');
+      card.classList.add('card');
+      card.textContent = '?';
+
+      card.onclick = () => {
+        if (lock || card.classList.contains('matched') || card === first) return;
+
+        card.textContent = num;
+        if (!first) {
+          first = card;
+        } else {
+          second = card;
+          lock = true;
+          setTimeout(() => {
+            if (first.textContent === second.textContent) {
+              first.classList.add('matched');
+              second.classList.add('matched');
+              score += 10;
+              matchedPairs++;
+              if (matchedPairs === 4) clearInterval(timerInterval);
+            } else {
+              first.textContent = '?';
+              second.textContent = '?';
+              score -= 2;
+            }
+            scoreDisplay.textContent = score;
+            first = null;
+            second = null;
+            lock = false;
+          }, 800);
+        }
+      };
+
+      board.appendChild(card);
+    });
+  </script>
+</body>
+</html>

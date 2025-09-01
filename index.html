@@ -1,0 +1,189 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open Learning Platform</title>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="navbar border">
+             
+                <div class="nav-logo" >
+                <div class="logo"> </div>
+                </div>
+             
+                <div class="nav-heading">
+                    <h1><i class="fas fa-chalkboard-teacher"></i> Open learning Platform for Schools</h1>
+                </div>
+                
+        </div>
+    </header>
+    
+    <div class="about">
+        <div class="about-text">
+            <h2>About :</h2>
+            <p>This website is mainly helpfull for the students who are studying from 1st to 8th class.
+                 It can help students to complete their works easily like projects.
+                  This web can also help students in development of their learning paths</p>
+        </div>
+        <div class="about-img border">
+        </div>
+        <div class="resources-advanced">
+            <h2><i class="fas fa-chalkboard-teacher"></i> Available Resources</h2>
+            <p>Explore the tools to improve your learning skills!</p>
+          </div>
+          
+        <div class="box1 box ai-tool">
+            <div class="box-content">
+              <a href="https://gemini.google.com/app"><i class="fas fa-comments"></i> AI Tool</a>
+            </div>
+          </div>
+          
+          
+          <div class="box1 box lang-path">
+            <div class="box-content">
+              <a href="langselect.html"><i class="fas fa-language"></i> Language Learning Paths</a>
+            </div>
+          </div>
+          
+          <div class="box1 box wiki">
+            <div class="box-content">
+              <a href="https://www.wikipedia.org/"><i class="fas fa-globe"></i> Wikipedia</a>
+            </div>
+          </div>
+          
+          <div class="box1 box dictionary">
+            <div class="box-content">
+              <a href="https://www.oxfordlearnersdictionaries.com/"><i class="fas fa-book-open"></i> Dictionary</a>
+            </div>
+          </div>
+          
+          <div class="box1 box mind-game">
+            <div class="box-content">
+              <a href="mindgames.html"><i class="fas fa-brain"></i> Mind Games</a>
+            </div>
+          </div>
+          
+          <div class="box1 box session-videos">
+            <div class="box-content">
+              <a href="class_selection.html"><i class="fas fa-video"></i> Online Session Videos</a>
+            </div>
+          </div>
+          
+          <div class="section-divider"></div>
+    
+             
+        
+          
+        </div>
+         <div class="box-info border">
+            <h1>Description :</h1>
+            <hr>
+            <h2>Online Session Videos :</h2>
+            <p>This section provides various session vedios according to your standard. These can help you better understanding of your lessions.</p>
+          <hr>
+            <h2>Language Learning Paths :</h2>
+            <p>This section provides various session vedios according to your selected language. here you can learn 3 languages. That are Telugu, Hindhi, and English.</p>
+          <hr>
+            <h2>Ai Tool :</h2>
+            <p>An "AI tool" is a software application or program that utilizes artificial intelligence algorithms and techniques to perform specific tasks,
+                 solve problems, or automate processes that typically require human intelligence.</p>
+         <hr>
+                 <h2>WIKIPEDIA :</h2>
+            <p>The primary purpose of Wikipedia, as you see it in Google search results, is to benefit readers by presenting information on all branches of knowledge in a free,
+                 widely accessible, and comprehensive online encyclopedia.It is usefull for collecting information about any thing that exits. This can help in your project works</p>
+         <hr>
+                 <h2>Dictonary :</h2>
+            <p>The primary function is to offer clear, accurate, and often multiple definitions for words, phrases, and idioms. This includes current usage as well as historical meanings.</p>
+          <hr>
+            <h2>Mind Games :</h2>
+            <p>Here you can play games to improve your learning.</p>
+        </div>
+    </div>
+           
+            <div class="contact-section border">
+                <h1><i class="fas fa-envelope"></i> Contact Us / Feedback</h1>
+
+                <div class="feedback-section">
+                    <h2>📢 Share Your Feedback</h2>
+                    <form id="feedbackForm">
+                        <input type="text" id="name" placeholder="Your Name" required><br><br>
+                        <textarea id="feedback" rows="5" placeholder="Enter your feedback here..." required></textarea><br><br>
+                        <button type="submit">Submit Feedback</button>
+                      </form>
+                      <p id="successMessage" style="color: green; font-weight: bold;"></p>
+                      
+                  </div>
+                  
+                  
+            
+              
+        
+        <div class="footer border">
+           <div class="foot border">
+             
+            <div class="foot-heading">
+                <h1><i class="fas fa-lightbulb"></i> Smart Learning</h1>
+            </div>
+            
+        </div>   
+        <div class="foot-img">
+            <div class="footimg1"></div>
+            <div class="footimg2"></div>
+        </div>
+        <div class="foot-last border ">
+            <p>Thankyou for Visiting.....</p>
+        </div>
+           
+        </div>
+        
+    </div>
+    <!-- Firebase SDKs -->
+<!-- ✅ Correct Firebase App (Browser) SDK -->
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+<!-- Your Firebase Setup + Form Submit Code -->
+<script>
+    var firebaseConfig = {
+      apiKey: "AIzaSyDGMMpu58M9Lri6PY5ny0-bjhYfKCysvOg",
+      authDomain: "open-learning-platform-12f54.firebaseapp.com",
+      projectId: "open-learning-platform-12f54",
+      storageBucket: "open-learning-platform-12f54.appspot.com",
+      messagingSenderId: "430203270076",
+      appId: "1:430203270076:web:0cbb50aca819a13740b1b9"
+    };
+  
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  
+    // Initialize Firestore
+    var db = firebase.firestore();
+  
+    document.getElementById("feedbackForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+  
+      var name = document.getElementById("name").value;
+      var feedback = document.getElementById("feedback").value;
+  
+      db.collection("feedback").add({
+        name: name,
+        feedback: feedback,
+        timestamp: firebase.firestore.FieldValue.serverTimestamp()
+      })
+      .then(function() {
+        document.getElementById("successMessage").textContent = "✅ Thank you! Your feedback was submitted.";
+        document.getElementById("feedbackForm").reset();
+      })
+      .catch(function(error) {
+        console.error("Error submitting feedback: ", error);
+        alert("❌ Failed to submit feedback. Try again.");
+      });
+    });
+  </script>
+  
+
+</body>
+</html>
